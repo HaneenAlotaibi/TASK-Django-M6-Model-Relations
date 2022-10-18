@@ -10,7 +10,7 @@ class Lecture(models.Model):
     course = models.ForeignKey(
         Course,
         on_delete=models.CASCADE,
-        related_name="lecture",
+        related_name="lectures",
     )
 
     def __str__(self):
@@ -46,7 +46,7 @@ class Assignment(models.Model):
 class Tag(models.Model):
     name = models.CharField(max_length=30)
     courses = models.ManyToManyField(
-        Course, related_name="tag"
+        Course, related_name="tags"
     )
 
     def __str__(self):
